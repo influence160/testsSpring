@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="a1" class="com.othmen.testspring.springcore.beanoverview.testbeans.A1">  
+    </bean>
+    
+    <alias name="a1" alias="a3"/>
+    
+    <bean id="a2" class="com.othmen.testspring.springcore.beanoverview.testbeans.A2">  
+    	<constructor-arg ref="a3"></constructor-arg>
+    </bean>
+    
+</beans>

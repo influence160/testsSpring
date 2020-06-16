@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+<!-- 		<property name="interceptors"> -->
+<!-- 			<list> -->
+<!-- 				<ref bean="controller1HandlerInterceptor"/> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+		<property name="removeSemicolonContent" value="false"></property>
+	</bean>
+	
+
+
+	<bean id="conversionService"
+	        class="org.springframework.context.support.ConversionServiceFactoryBean">
+	    <property name="converters">
+	        <set>
+	            <bean class="com.othmen.springtest.webmvc.test.t2.controller.Person.PersonTOStringConverter"/>
+	        </set>
+	    </property>
+	</bean>
+
+
+	
+<!-- 	<mvc:interceptors> -->
+	
+<!-- 	</mvc:interceptors> -->
+
+<!-- 	<interceptors></interceptors> -->
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/t2/rest-controller1/*" />
+			<mvc:mapping path="/rest-controller1/*" />
+			<bean class="com.othmen.springtest.webmvc.test.t2.controller.Controller1HandlerInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+</beans>
+

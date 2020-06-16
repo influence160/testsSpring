@@ -1,0 +1,5 @@
+2020-06-12 22:48:04.202  INFO 52616 --- [main] c.e.demo.SpringBootLoggingApplication    : Starting SpringBootLoggingApplication on RedDragon with PID 52616 (D:\JAVA\workspaces\testsSpring\spring-boot-logging\target\classes started by user in D:\JAVA\workspaces\testsSpring\spring-boot-logging)
+2020-06-12 22:48:04.205 DEBUG 52616 --- [main] c.e.demo.SpringBootLoggingApplication    : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-06-12 22:48:04.205  INFO 52616 --- [main] c.e.demo.SpringBootLoggingApplication    : No active profile set, falling back to default profiles: default
+2020-06-12 22:48:04.847  INFO 52616 --- [main] c.e.demo.SpringBootLoggingApplication    : Started SpringBootLoggingApplication in 0.878 seconds (JVM running for 1.474)
+2020-06-12 22:48:04.850 DEBUG 52616 --- [main] com.example.demo.beans.A                 : test

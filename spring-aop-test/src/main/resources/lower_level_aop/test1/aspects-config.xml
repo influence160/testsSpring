@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<!-- 	<aop:aspectj-autoproxy/> -->
+	
+	<bean id="pointcutTest1" class="com.othmen.springtest.lower_level_aop.api.test1.PointCutTest1"/>
+	
+	<bean id="beforeAdviceTest1" class="com.othmen.springtest.lower_level_aop.api.test1.BeforeAdviceTest1"/>
+	<bean id="beforeTest1Advisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<constructor-arg ref="pointcutTest1"></constructor-arg>
+		<constructor-arg ref="beforeAdviceTest1"></constructor-arg>
+	</bean>
+	
+	<bean id="methodInterceptorTest1" class="com.othmen.springtest.lower_level_aop.api.test1.MethodInterceptorTest1"/>
+	<bean id="aroundTest1Advisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<constructor-arg ref="pointcutTest1"></constructor-arg>
+		<constructor-arg ref="methodInterceptorTest1"></constructor-arg>
+	</bean>
+	
+	<bean id="bean1Target" class="com.othmen.springtest.lower_level_aop.api.test1.Bean1"></bean>
+	
+	<bean id="bean1" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="interceptorNames">
+			<list>
+				<value>beforeTest1Advisor</value>
+				<value>aroundTest1Advisor</value>
+			</list>
+		</property>
+		<property name="proxyInterfaces" value="com.othmen.springtest.lower_level_aop.api.test1.TestInterface"/>
+    	<property name="target" ref="bean1Target"/>
+	</bean>
+	
+	<bean id="bean2Target" class="com.othmen.springtest.lower_level_aop.api.test1.Bean1"/>
+	
+	<bean id="bean2" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="interceptorNames" value="aroundTest1Advisor"/>
+		<property name="proxyTargetClass" value="true"/>
+    	<property name="target" ref="bean2Target"/>
+	</bean>
+	
+	
+	<!-- TEST3 -->
+	
+	<bean id="bean3" class="com.othmen.springtest.lower_level_aop.api.test1.Bean3"/>
+	
+	<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+	    <property name="beanNames" value="bean3"/>
+	    <property name="interceptorNames">
+	        <list>
+				<value>beforeTest1Advisor</value>
+				<value>aroundTest1Advisor</value>
+	        </list>
+	    </property>
+	</bean>
+
+	
+
+</beans>
+
