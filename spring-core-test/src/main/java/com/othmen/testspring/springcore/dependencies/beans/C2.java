@@ -13,5 +13,9 @@ public class C2 {
 	public C1 m2() {
 		return null;
 	}
+	
+	public void setCcc() {
+		
+	}
 
 }

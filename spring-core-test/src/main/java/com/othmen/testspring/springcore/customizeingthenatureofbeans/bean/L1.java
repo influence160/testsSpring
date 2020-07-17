@@ -6,19 +6,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class L1 implements Lifecycle{
 
+	private boolean running = false;
+
 	public void start() {
 		System.out.println("L1.start()");
+		running = true;
 		
 	}
 
 	public void stop() {
 		System.out.println("L1.stop()");
+		running = false;
 		
 	}
 
 	public boolean isRunning() {
-		// TODO Auto-generated method stub
-		return false;
+		return running;
 	}
 
 }

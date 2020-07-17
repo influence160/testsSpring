@@ -1,11 +1,14 @@
 package com.othmen.springtest.simpletests.test3;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AdviceMode;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -74,6 +77,8 @@ public class TestAnnotation {
 				setUsername(c);
 				setPassword(d);
 			}
+			
+		
 		};
 		return datasource;
 	}

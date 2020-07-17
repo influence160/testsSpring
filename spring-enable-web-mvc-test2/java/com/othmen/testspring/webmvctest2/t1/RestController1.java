@@ -18,9 +18,11 @@ public class RestController1 {
 		System.out.println("RestController1");
 	}
 
-	@GetMapping(path = "/test")
-	public String test() {
-		return new String("test");
+	//http://localhost:8080/spring-enable-web-mvc-test2/rs1/test1?aa=5&b=9 => 200
+	//http://localhost:8080/spring-enable-web-mvc-test2/rs1/test1?aa=5&bbbbb=9	=> 500
+	@RequestMapping(path = "/test")
+	public String test(int aa, int b) {
+		return new String("test aa = " + aa + " b = " + b);
 	}
 
 	@GetMapping(path = "/p1")

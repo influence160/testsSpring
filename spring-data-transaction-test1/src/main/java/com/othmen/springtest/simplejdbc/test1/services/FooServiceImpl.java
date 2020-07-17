@@ -7,6 +7,7 @@ import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +15,7 @@ import com.othmen.springtest.simplejdbc.test1.entity.Foo;
 import com.othmen.springtest.simplejdbc.test1.repository.FooRepository;
 
 @Service
-@Transactional(propagation = Propagation.REQUIRES_NEW)
+@Transactional(isolation = Isolation.DEFAULT, propagation = Propagation.REQUIRES_NEW)
 public class FooServiceImpl implements FooService {
 	
 	private FooRepository fooRepository;

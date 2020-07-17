@@ -35,7 +35,7 @@ public class DefaultFooRepository implements FooRepository{
 
 	@Override
 	public List<Foo> getAll() {
-		
+		System.out.println("getall()");
 		return null;
 //		return namedParameterJdbcTemplate.query("select * from foo ", new BeanPropertyRowMapper<Foo>(Foo.class));
 	}

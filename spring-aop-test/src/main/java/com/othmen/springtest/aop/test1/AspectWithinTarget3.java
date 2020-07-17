@@ -19,10 +19,10 @@ public class AspectWithinTarget3 {
 		System.out.println("After returning within Interface31");
 	}
 	
-//	@AfterReturning(value = "within(Interface32)")
-//	public void testWithinInterface32() {
-//		System.out.println("After returning within Interface32");
-//	}
+	@AfterReturning(value = "within(Interface32)")
+	public void testWithinInterface32() {
+		System.out.println("After returning within Interface32");
+	}
 
 
 	@AfterReturning(value = "target(Component3)")

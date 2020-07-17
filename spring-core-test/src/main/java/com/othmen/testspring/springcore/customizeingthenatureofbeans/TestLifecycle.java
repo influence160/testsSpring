@@ -14,11 +14,15 @@ public class TestLifecycle {
 		context.refresh();
 		context.start();
 		L1 c2 = context.getBean(L1.class);
-		System.out.println(c2);
+		System.out.println(c2.isRunning());
 		context.stop();
 
 		c2 = context.getBean(L1.class);
-		System.out.println(c2);
+		System.out.println(c2.isRunning());
+
+		context.start();
+		c2 = context.getBean(L1.class);
+		System.out.println(c2.isRunning());
 		
 	}
 

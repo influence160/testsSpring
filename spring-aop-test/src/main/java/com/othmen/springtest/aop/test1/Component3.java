@@ -1,6 +1,5 @@
 package com.othmen.springtest.aop.test1;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("ccc3")

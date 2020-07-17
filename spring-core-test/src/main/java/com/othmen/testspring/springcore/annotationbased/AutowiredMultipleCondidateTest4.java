@@ -1,6 +1,8 @@
 package com.othmen.testspring.springcore.annotationbased;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 
 public class AutowiredMultipleCondidateTest4 {
 
@@ -15,5 +17,6 @@ public class AutowiredMultipleCondidateTest4 {
 		System.out.println(ctx.getBean(com.othmen.testspring.springcore.annotationbased.beans4.A3.class).getA4());
 		
 	}
+
 
 }

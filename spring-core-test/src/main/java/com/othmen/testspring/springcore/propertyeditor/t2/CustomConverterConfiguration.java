@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.support.DefaultConversionService;
-import org.springframework.format.support.DefaultFormattingConversionService;
 
 import com.othmen.testspring.springcore.propertyeditor.t1.Person;
 

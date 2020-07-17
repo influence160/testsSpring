@@ -1,5 +1,118 @@
-2020-06-12 22:48:04.202  INFO 52616 --- [main] c.e.demo.SpringBootLoggingApplication    : Starting SpringBootLoggingApplication on RedDragon with PID 52616 (D:\JAVA\workspaces\testsSpring\spring-boot-logging\target\classes started by user in D:\JAVA\workspaces\testsSpring\spring-boot-logging)
-2020-06-12 22:48:04.205 DEBUG 52616 --- [main] c.e.demo.SpringBootLoggingApplication    : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
-2020-06-12 22:48:04.205  INFO 52616 --- [main] c.e.demo.SpringBootLoggingApplication    : No active profile set, falling back to default profiles: default
-2020-06-12 22:48:04.847  INFO 52616 --- [main] c.e.demo.SpringBootLoggingApplication    : Started SpringBootLoggingApplication in 0.878 seconds (JVM running for 1.474)
-2020-06-12 22:48:04.850 DEBUG 52616 --- [main] com.example.demo.beans.A                 : test
+2020-07-10 11:52:01.188  INFO 39164 --- [main] c.e.demo.SpringBootLoggingApplication    : Starting SpringBootLoggingApplication on RedDragon with PID 39164 (D:\JAVA\workspaces\testsSpring\spring-boot-logging\target\classes started by user in D:\JAVA\workspaces\testsSpring\spring-boot-logging)
+2020-07-10 11:52:01.208 DEBUG 39164 --- [main] c.e.demo.SpringBootLoggingApplication    : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-10 11:52:01.208  INFO 39164 --- [main] c.e.demo.SpringBootLoggingApplication    : No active profile set, falling back to default profiles: default
+2020-07-10 11:52:01.587  INFO 39164 --- [main] c.e.demo.SpringBootLoggingApplication    : Started SpringBootLoggingApplication in 0.707 seconds (JVM running for 1.749)
+2020-07-10 11:52:01.590 DEBUG 39164 --- [main] com.example.demo.beans.A                 : test
+2020-07-10 11:54:59.705  INFO 29648 --- [main] c.e.demo.SpringBootLoggingApplication    : Starting SpringBootLoggingApplication on RedDragon with PID 29648 (D:\JAVA\workspaces\testsSpring\spring-boot-logging\target\classes started by user in D:\JAVA\workspaces\testsSpring\spring-boot-logging)
+2020-07-10 11:54:59.706 DEBUG 29648 --- [main] c.e.demo.SpringBootLoggingApplication    : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-10 11:54:59.707  INFO 29648 --- [main] c.e.demo.SpringBootLoggingApplication    : No active profile set, falling back to default profiles: default
+2020-07-10 11:54:59.995  WARN 29648 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'a': Unsatisfied dependency expressed through field 'jdbcTemplate'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.jdbc.core.JdbcTemplate' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-07-10 11:55:00.000  INFO 29648 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-07-10 11:55:00.080 ERROR 29648 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field jdbcTemplate in com.example.demo.beans.A required a bean of type 'org.springframework.jdbc.core.JdbcTemplate' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.jdbc.core.JdbcTemplate' in your configuration.
+
+2020-07-10 11:58:08.468  INFO 30248 --- [main] c.e.demo.SpringBootLoggingApplication    : Starting SpringBootLoggingApplication on RedDragon with PID 30248 (D:\JAVA\workspaces\testsSpring\spring-boot-logging\target\classes started by user in D:\JAVA\workspaces\testsSpring\spring-boot-logging)
+2020-07-10 11:58:08.469 DEBUG 30248 --- [main] c.e.demo.SpringBootLoggingApplication    : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-10 11:58:08.470  INFO 30248 --- [main] c.e.demo.SpringBootLoggingApplication    : No active profile set, falling back to default profiles: default
+2020-07-10 11:58:08.820  WARN 30248 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'a': Unsatisfied dependency expressed through field 'jdbcTemplate'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcTemplate' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/JdbcTemplateConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2020-07-10 11:58:08.827  INFO 30248 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-07-10 11:58:08.833 ERROR 30248 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2020-07-10 11:58:47.671  INFO 33884 --- [main] c.e.demo.SpringBootLoggingApplication    : Starting SpringBootLoggingApplication on RedDragon with PID 33884 (D:\JAVA\workspaces\testsSpring\spring-boot-logging\target\classes started by user in D:\JAVA\workspaces\testsSpring\spring-boot-logging)
+2020-07-10 11:58:47.673 DEBUG 33884 --- [main] c.e.demo.SpringBootLoggingApplication    : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-10 11:58:47.673  INFO 33884 --- [main] c.e.demo.SpringBootLoggingApplication    : No active profile set, falling back to default profiles: default
+2020-07-10 11:58:47.977  INFO 33884 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-07-10 11:58:47.994  INFO 33884 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 JPA repository interfaces.
+2020-07-10 11:58:48.133  WARN 33884 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2020-07-10 11:58:48.141  INFO 33884 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-07-10 11:58:48.146 ERROR 33884 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2020-07-10 12:01:58.219  INFO 6864 --- [main] c.e.demo.SpringBootLoggingApplication    : Starting SpringBootLoggingApplication on RedDragon with PID 6864 (D:\JAVA\workspaces\testsSpring\spring-boot-logging\target\classes started by user in D:\JAVA\workspaces\testsSpring\spring-boot-logging)
+2020-07-10 12:01:58.221 DEBUG 6864 --- [main] c.e.demo.SpringBootLoggingApplication    : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-10 12:01:58.222  INFO 6864 --- [main] c.e.demo.SpringBootLoggingApplication    : No active profile set, falling back to default profiles: default
+2020-07-10 12:01:58.510  INFO 6864 --- [main] c.e.demo.SpringBootLoggingApplication    : Started SpringBootLoggingApplication in 0.506 seconds (JVM running for 1.038)
+2020-07-10 12:01:58.512 DEBUG 6864 --- [main] com.example.demo.beans.A                 : test
+2020-07-10 12:02:19.193  INFO 35952 --- [main] c.e.demo.SpringBootLoggingApplication    : Starting SpringBootLoggingApplication on RedDragon with PID 35952 (D:\JAVA\workspaces\testsSpring\spring-boot-logging\target\classes started by user in D:\JAVA\workspaces\testsSpring\spring-boot-logging)
+2020-07-10 12:02:19.195 DEBUG 35952 --- [main] c.e.demo.SpringBootLoggingApplication    : Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-07-10 12:02:19.195  INFO 35952 --- [main] c.e.demo.SpringBootLoggingApplication    : No active profile set, falling back to default profiles: default
+2020-07-10 12:02:19.428  WARN 35952 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'a': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-07-10 12:02:19.436  INFO 35952 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-07-10 12:02:19.494 ERROR 35952 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSource in com.example.demo.beans.A required a bean of type 'javax.sql.DataSource' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+The following candidates were found but could not be injected:
+	- Bean method 'dataSource' in 'JndiDataSourceAutoConfiguration' not loaded because @ConditionalOnClass did not find required class 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'
+	- Bean method 'dataSource' in 'XADataSourceAutoConfiguration' not loaded because @ConditionalOnClass did not find required class 'javax.transaction.TransactionManager'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'javax.sql.DataSource' in your configuration.
+

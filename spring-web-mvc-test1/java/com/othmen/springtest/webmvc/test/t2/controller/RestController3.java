@@ -25,6 +25,7 @@ public class RestController3 {
 	
 	@InitBinder
 	private void initBinder(WebDataBinder binder) {
+		// binder.addValidators(new FooValidator());
 		System.out.println("initBinder");
 		System.out.println(".canConvert(String.class, Person.class) = " + binder.getConversionService().canConvert(String.class, Person.class));
 	}
